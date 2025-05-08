@@ -4,3 +4,6 @@ from django.db import models
 class Customer(models.Model):
   firstname = models.CharField(max_length=255)
   lastname = models.CharField(max_length=255)
+#   newsletter_abo = models.BooleanField()
+#   email_address = models.EmailField()
+#   account = models.FloatField()
