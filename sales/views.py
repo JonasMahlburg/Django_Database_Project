@@ -8,12 +8,12 @@ from django.utils import timezone
 class CustomerListView(ListView):
     model = Customer
     template_name = "sales/list.html"
-    paginate_by = 2
+    paginate_by = 3
 
 class CustomerListSearchView(CustomerListView):
     def get_queryset(self):
         name = self.kwargs.get("name")
-        return Customer.objects.filter(first_name=name)
+        return Customer.objects.filter(first_name__icontains=name)
 
 class CustomerDetailView(DetailView):
      model = Customer
